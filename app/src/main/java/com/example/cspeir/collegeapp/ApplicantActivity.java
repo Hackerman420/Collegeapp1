@@ -23,20 +23,20 @@ import com.backendless.exceptions.BackendlessFault;
 public class ApplicantActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static final String EMAIL_PREF = "EMAIL_PREF";
-    private final String APP_ID = "5CF13F91-F699-0312-FFC2-24634322F900";
-    private final String API_KEY = "207B5D3D-35DE-75B9-FF65-DE258F880300";
-    private final String MY_EMAIL_ADRESS= "cospe18@hotmail.com";
+    private final String APP_ID = "D8CA34FB-A88C-9F50-FFCB-C3186CA09100";
+    private final String API_KEY = "23A3F3FB-67B9-85DA-FF05-454DB31EB800";
+    private final String MY_EMAIL_ADDRESS= "bleitzel@icloud.com";
     Fragment contentFragment = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences sharedPreferences = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(EMAIL_PREF,MY_EMAIL_ADRESS);
+        editor.putString(EMAIL_PREF,MY_EMAIL_ADDRESS);
         editor.commit();
         Backendless.initApp(this, APP_ID, API_KEY);
         BackendlessUser user = new BackendlessUser();
-        user.setEmail("cospe18@hotmail.com");
+        user.setEmail("bleitzel.icloud.com");
         user.setPassword("password");
         Backendless.UserService.register(user, new AsyncCallback<BackendlessUser>() {
             @Override

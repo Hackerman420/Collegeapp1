@@ -27,7 +27,7 @@ import java.util.List;
 import static weborb.util.ThreadContext.context;
 
 /**
- * Created by cspeir on 10/6/2017.
+ * Created by cspei on 10/6/2017.
  */
 
 public class ProfileFragment extends Fragment {
@@ -79,14 +79,16 @@ public class ProfileFragment extends Fragment {
                 if ((first != null && !first.equals("")) && (last != null && !last.equals(""))) {
                     mFirstNameText.setText(first);
                     mLastNameText.setText(last);
-                }
-                String whereClause = "email = '" +email+"'";
+                    mProfile.setFirstName(first);
+                    mProfile.setLastName(last);
+
+                String whereClause = "email = '" + email + "'";
                 DataQueryBuilder queryBuilder = DataQueryBuilder.create();
                 queryBuilder.setWhereClause(whereClause);
                 Backendless.Data.of(Profile.class).find(queryBuilder, new AsyncCallback<List<Profile>>() {
                     @Override
                     public void handleResponse(List<Profile> response) {
-                        if(!response.isEmpty()){
+                        if (!response.isEmpty()) {
                             String profileId = response.get(0).getObjectId();
                             mProfile.setObjectId(profileId);
                             Log.i("ProfileFragment", profileId);
@@ -109,6 +111,7 @@ public class ProfileFragment extends Fragment {
                         Log.i("ProfileFragment", fault.getMessage());
                     }
                 });
+            }
             }
 
         });

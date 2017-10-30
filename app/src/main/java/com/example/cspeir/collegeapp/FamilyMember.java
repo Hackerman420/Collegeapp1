@@ -1,10 +1,10 @@
 package com.example.cspeir.collegeapp;
 
 /**
- * Created by cspeir on 10/6/2017.
+ * Created by bleitzel on 10/6/2017.
  */
 
-public abstract class FamilyMember {
+public abstract class FamilyMember extends Applicant {
     private String firstName;
     private String lastName;
     public String getFirstName() {

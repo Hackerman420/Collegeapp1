@@ -3,18 +3,16 @@ package com.example.cspeir.collegeapp;
 import java.util.Date;
 
 /**
- * Created by cspeir on 10/6/2017.
+ * Created by bleitzel on 10/6/2017.
  */
 
-public class Profile {
+public class Profile extends Applicant{
     private String lastName;
     private String firstName;
     private Date mDates;
     public String getFirstName() {
         return firstName;
     }
-    private String objectId;
-    private String email;
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -47,21 +45,5 @@ public class Profile {
 
     public void setDates(Date todaysDate) {
         mDates = todaysDate;
-    }
-
-    public String getObjectId() {
-        return objectId;
-    }
-
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 }
